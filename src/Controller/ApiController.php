@@ -23,4 +23,13 @@ final class ApiController extends AbstractController
             ['id' => 2, 'name' => 'Jane Doe'],
         ]);
     }
+
+    #[Route('/users/{id}', methods: ['GET'])]
+    public function user(int $id): JsonResponse
+    {
+        return new JsonResponse([
+            'id' => $id,
+            'name' => 'John'
+        ]);
+    }
 }
